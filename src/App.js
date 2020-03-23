@@ -1,11 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import { BrowserRouter, Route } from "react-router-dom";
+import home from "./Components/Home";
+import About from "./Components/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Route exact path="/" component={home} />
+        <Route path="/about" component={About} />
+        {/* <h2>Hello Monks</h2> */}
+        {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,8 +27,9 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
+      </header> */}
+      </div>
+    </BrowserRouter>
   );
 }
 
